@@ -1,19 +1,38 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(186, 160, 213);
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  font-size: 7vh;
+}
+
+iframe {
+  margin-top: 15vh;
+  margin-left: 50vh;
 }
 
 a {
-  color: #00B7FF;
+  color: black;
 }
 
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
   height: 34px;
 }
 
 .login img {
-  height: 30px;
+  height: 40px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
