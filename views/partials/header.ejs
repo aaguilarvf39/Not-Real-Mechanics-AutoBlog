@@ -9,8 +9,9 @@
 </head>
 <body>
   <nav>
-    <a href="/">Home</a>&nbsp;|&nbsp;<a href="/">Money Pits</a>&nbsp;|&nbsp;<a href="/">Add Money Pit</a>
+    <a href="/">Home</a>&nbsp;
     <% if (user) { %>
+      |&nbsp;<a href="/">Money Pits</a>&nbsp;|&nbsp;<a href="/">Add Money Pit</a>
       <a href="/logout" class="login">Log Out?</a>
     <% } else { %>
       <a href="/auth/google" class="login">Log In!&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
