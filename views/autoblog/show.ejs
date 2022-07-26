@@ -1,42 +1,70 @@
 <%- include('../partials/header') %>
 
-<h2>New Pit</h2>
-<form action="/autoblog" method="POST">
-    <label>Make:
-        <select name="make">
-            <option value="Subaru">Subaru</option>
-            <option value="Audi">Audi</option>
-            <option value="Chevrolet">Chevrolet</option>
-            <option value="Honda">Honda</option>
-            <option value="Nissan">Nissan</option>
-            <option value="Toyota">Toyota</option>
-        </select>
-    </label><br>
-    <label>Model:
-        <select name="model">
-            <option value="Bugeye WRX">Bugeye WRX</option>
-            <option value="Blobeye WRX">Blobeye WRX</option>
-            <option value="VA STI">VA STI</option>
-            <option value="S6">S6</option>
-            <option value="Silverado">Silverado</option>
-            <option value="S2000">S2000</option>
-            <option value="GTR">GTR</option>
-            <option value="Supra MK4">Supra MK4</option>
-        </select>
-    </label><br>
-    <label>Engine:
-        <select name="engine">
-            <option value="EJ205">EJ205</option>
-            <option value="EJ257">EJ257</option>
-            <option value="EA825">EA825</option>
-            <option value="Vortec 5300">Vortec 5300</option>
-            <option value="F20C">F20C</option>
-            <option value="RB26DETT">RB26DETT</option>
-            <option value="2JZGTE">2JZGTE</option>
-        </select>
-    </label><br>
-    <input type="submit" value="Submit">
-</form>
+<section id="show-page">
+  <div>Make: </div>
+  <div><%= autoblog.make %></div>
+  <div>Model: </div>
+  <div><%= autoblog.model %></div>
+  <div>Engine: </div>
+  <div><%= autoblog.engine %></div>
+</section>
 
+<br><br><h2>Comments</h2>
 
+<% if (user) { %>
+  <form id="add-comment-form" method="POST"
+    action="/autoblog/<%= autoblog._id %>/comments">
+    <label>Comment:</label>
+    <textarea name="content"></textarea>
+    <label>Sauce Level:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <input type="submit" value="Add Sauce">
+  </form>
+<% } %>
+
+<% if (autoblog.comments.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Comment</th>
+        <th>Rating</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let sum = 0; %>
+      <% autoblog.comments.forEach(function(c) { %>
+        <% sum += a.rating %>
+        <tr>
+          <td class="comment-user"><img src="<%= c.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"><%= c.userName %></td>
+          <td><%= c.createdAt.toLocaleDateString() %></td>
+          <td><%= c.content %></td>
+          <td><%= c.rating %></td>
+          <td>
+            <% if ( user?._id.equals(r.user) ) { %>
+              <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+        <% }); %>
+        <tr>
+          <td colspan="3"></td>
+          <td><%= (sum / autoblog.comments.length).toFixed(2) %></td>
+        </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Comments Yet</h5>
+<% } %>
+  
 <%- include('../partials/footer') %>

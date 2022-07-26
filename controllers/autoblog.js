@@ -13,7 +13,7 @@ function show(req, res) {
 }
 
 function newAutoblog(req, res) {
-    res.render('autoblog/index');
+    res.render('autoblog/new');
 }
 
 function index(req, res) {
@@ -23,5 +23,5 @@ function index(req, res) {
 }
 
 function create(req, res) {
-    console.log('create', req.body);
+        res.redirect('/autoblog');
 }

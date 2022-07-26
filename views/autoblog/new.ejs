@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+
+<h2>New Pit</h2>
+<form action="/autoblog" method="POST">
+    <label>Make:
+        <select name="make">
+            <option value="Subaru">Subaru</option>
+            <option value="Audi">Audi</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Honda">Honda</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Toyota">Toyota</option>
+        </select>
+    </label><br>
+    <label>Model:
+        <select name="model">
+            <option value="Bugeye WRX">Bugeye WRX</option>
+            <option value="Blobeye WRX">Blobeye WRX</option>
+            <option value="VA STI">VA STI</option>
+            <option value="S6">S6</option>
+            <option value="Silverado">Silverado</option>
+            <option value="S2000">S2000</option>
+            <option value="GTR">GTR</option>
+            <option value="Supra MK4">Supra MK4</option>
+        </select>
+    </label><br>
+    <label>Engine:
+        <select name="engine">
+            <option value="EJ205">EJ205</option>
+            <option value="EJ257">EJ257</option>
+            <option value="EA825">EA825</option>
+            <option value="Vortec 5300">Vortec 5300</option>
+            <option value="F20C">F20C</option>
+            <option value="RB26DETT">RB26DETT</option>
+            <option value="2JZGTE">2JZGTE</option>
+        </select>
+    </label><br>
+    <input type="submit" value="Submit">
+</form>
+
+<%- include('../partials/footer') %>
