@@ -13,7 +13,7 @@
 
 <% if (user) { %>
   <form id="add-comment-form" method="POST"
-    action="/autoblogs/<%= autoblog._id %>/comments">
+    action="/comments/<%= autoblog._id %>">
     <label>Comment:</label>
     <textarea name="content"></textarea>
     <label>Sauce Level:</label>

@@ -18,12 +18,9 @@ function index(req, res) {
   }
   
   function show(req, res) {
-    Autoblog.findById(req.params.id)
-      .exec(function(err, autoblog) {
-            res.render('autoblogs/show', {
-              title: 'Autoblog Detail'
-          });
-      });
+    Autoblog.findById(req.params.id, function(err, autoblog) {
+      res.render('autoblogs/show', { title: 'Autoblog Details', autoblog });
+    });
   }
   
   function create(req, res) {

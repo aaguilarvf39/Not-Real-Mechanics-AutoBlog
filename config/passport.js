@@ -51,9 +51,9 @@ passport.serializeUser(function(user, cb) {
 });
 
 // Called with every request by a logged in user
-passport.deserializeUser(function(userId, cb) {
+passport.deserializeUser(async function(userId, cb) {
     // Return the user's doc so that passport
     // can assign it to req.user
-    const user = User.findById(userId); 
+    const user =  await User.findById(userId); 
     cb(null, user);
 });

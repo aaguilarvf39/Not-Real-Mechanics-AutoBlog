@@ -31,7 +31,8 @@ const autoblogSchema = new Schema({
     engine: {
         type: String,
         enum: ['EJ205', 'EJ257', 'EA825', 'Vortec 5300', 'F20C', 'RB26DETT', '2JZGTE']
-    }
+    },
+    comments: [commentSchema]
 });
 
 module.exports = mongoose.model('Autoblog', autoblogSchema);

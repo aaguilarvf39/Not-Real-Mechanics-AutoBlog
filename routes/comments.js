@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const commentsCtrl = require('../controllers/comments');
 
-router.post('/autoblogs/:id/comments', commentsCtrl.create);
-router.delete('/comments/:id', commentsCtrl.delete);
+router.post('/:id', commentsCtrl.create);
+router.delete('/:id', commentsCtrl.delete);
 
 module.exports = router;
