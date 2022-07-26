@@ -10,13 +10,12 @@
             </tr>
         </thead>
         <tbody>
-            <% autoblog.forEach(function(a) { %>
+            <% autoblogs.forEach(function(a) { %>
                 <tr>
                     <td><%= a.make %></td>
                     <td><%= a.model %></td>
                     <td><%= a.engine %></td>
-                        <td><%= a.Beefy ? 'Yes' : 'No' %></td>
-                    <td><a href="/autoblog/<%= a._id %>">DETAILS</a></td>
+                    <td><a href="/autoblogs/<%= a._id %>">DETAILS</a></td>
                 </tr>
 
             <% }); %>

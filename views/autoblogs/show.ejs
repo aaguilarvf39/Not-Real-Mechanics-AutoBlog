@@ -13,11 +13,11 @@
 
 <% if (user) { %>
   <form id="add-comment-form" method="POST"
-    action="/autoblog/<%= autoblog._id %>/comments">
+    action="/autoblogs/<%= autoblog._id %>/comments">
     <label>Comment:</label>
     <textarea name="content"></textarea>
     <label>Sauce Level:</label>
-    <select name="rating">
+    <select name="Sauce Level">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -42,14 +42,14 @@
     <tbody>
       <% let sum = 0; %>
       <% autoblog.comments.forEach(function(c) { %>
-        <% sum += a.rating %>
+        <% sum += c.rating %>
         <tr>
           <td class="comment-user"><img src="<%= c.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"><%= c.userName %></td>
           <td><%= c.createdAt.toLocaleDateString() %></td>
           <td><%= c.content %></td>
           <td><%= c.rating %></td>
           <td>
-            <% if ( user?._id.equals(r.user) ) { %>
+            <% if ( user?._id.equals(c.user) ) { %>
               <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>

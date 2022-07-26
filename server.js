@@ -12,7 +12,8 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var autoblogRouter = require('./routes/autoblog');
+var autoblogsRouter = require('./routes/autoblogs');
+var commentsRouter = require('./routes/comments');
 
 var app = express();
 
@@ -41,8 +42,12 @@ app.use(function(req, res, next) {
   next();
 });
 
+// Middleware to protect routes
+const isLoggedIn = require('./config/auth');
+
 app.use('/', indexRouter);
-app.use('/autoblog', autoblogRouter);
+app.use('/autoblogs', autoblogsRouter);
+app.use('/', isLoggedIn, commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

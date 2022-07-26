@@ -11,7 +11,7 @@ async function deleteComment(req, res, next) {
     if (!autoblog) throw new Error('Not today!');
     autoblog.comments.remove(req.params.id);
     await autoblog.save();
-    res.redirect(`/autoblog/${autoblog._id}`);
+    res.redirect(`/autoblogs/${autoblog._id}`);
   } catch (err) {
     return next(err);
   }
@@ -29,7 +29,7 @@ function create(req, res) {
     autoblog.save(function(err) {
       // Step 5: Data has been changed
       // so we redirect
-      res.redirect(`/autoblog/${autoblog._id}`);
+      res.redirect(`/autoblogs/${autoblog._id}`);
     });
   });
 }
