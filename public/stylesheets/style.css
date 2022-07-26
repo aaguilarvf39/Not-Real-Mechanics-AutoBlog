@@ -28,11 +28,22 @@ a {
 }
 
 .login img {
-  height: 40px;
+  height: 30px;
 }
 
 nav {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.comment-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-user img {
+  border-radius: 50%;
+  height: 55px;
 }
