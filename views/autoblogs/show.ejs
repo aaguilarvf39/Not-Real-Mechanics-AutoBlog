@@ -52,10 +52,12 @@
               <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button> 
               </form>
-              <form action="/comments/edit/<%= c._id %>?_method=EDIT" method="PUT">
+              <% } %>
+              <% if ( user?._id.equals(c.user) ) { %>
+              <a href="/autoblogs/<%= c._id %>/comments/edit">
                 <button type="submit">Edit</button>
-              </form>
-            <% } %>
+              </a>
+              <% } %>
           </td>
         </tr>
         <% }); %>

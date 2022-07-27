@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const commentSchema = new Schema({
     content: {
       type: String,
-      match: /.{10,}/
+      match: /.{5,}/
     },
     rating: {
       type: Number,
