@@ -2,8 +2,23 @@ const Autoblog = require('../models/autoblog');
 
 module.exports = {
   create,
-  delete: deleteComment
+  delete: deleteComment,
+  edit,
+  update
 };
+
+function edit(req, res) {
+  Autoblog.findOne({_id: req.params.id, userRecommending: req.user._id}, function(err, car) {
+    if (err || !autoblog) return res.redirect('/autoblog');
+    console.log(autoblog)
+    res.render('autoblogs/edit', {car});
+  });
+}
+
+function update(req,res) {
+  res.render('/autoblogs/:id', {title: 'Autoblog' });
+}
+
 
 async function deleteComment(req, res, next) {
   try {
@@ -19,8 +34,8 @@ async function deleteComment(req, res, next) {
 
 function create(req, res) {
   // The new review will be embedded in the movie doc
-  console.log(req.user._id, 'create function');
   Autoblog.findById(req.params.id, function(err, autoblog) {
+    console.log(req.user._id, 'create function');
     // Add the user-centric info to req.body
     req.body.user = req.user._id;
     req.body.userName = req.user.name;

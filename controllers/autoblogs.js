@@ -14,7 +14,7 @@ function index(req, res) {
   }
   
   function newAutoblog(req, res) {
-    res.render('autoblogs/new', { title: 'New Pit' });
+    res.render('autoblogs/new', { title: 'Money Pits' });
   }
   
   function show(req, res) {
@@ -31,29 +31,3 @@ function index(req, res) {
       res.redirect(`/autoblogs/${autoblog._id}`);
     });
   }
-  
-
-
-
-
-
-
-
-// function show(req, res) {
-//     const auto = new Autoblog(req.body);
-//     res.render('autoblog/new', { auto });
-// }
-
-// function newAutoblog(req, res) {
-//     res.render('autoblog/new');
-// }
-
-// function index(req, res) {
-//     Autoblog.find({}, function(err, autoblog) {
-//         res.render('autoblog/index', { autoblog });
-//     });
-// }
-
-// function create(req, res) {
-//         res.redirect('/autoblog');
-// }
