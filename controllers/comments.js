@@ -15,6 +15,7 @@ function update(req, res) {
       const commentSubdoc = autoblog.comments.id(req.params.id);
       if (!commentSubdoc.user.equals(req.user._id)) return res.redirect(`/autoblogs/${autoblog._id}`);
       commentSubdoc.content = req.body.content;
+      commentSubdoc.rating = req.body.rating;
       autoblog.save(function(err) {
         res.redirect(`/autoblogs/${autoblog._id}`);
       });  
