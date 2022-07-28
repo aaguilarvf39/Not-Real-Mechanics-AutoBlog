@@ -8,12 +8,12 @@
       <label>Comment:</label>
       <textarea name="content"><%= comment.content %></textarea>
       <label>Sauce Level:</label>
-      <select name="Sauce Level" value="<%= comment.rating %>">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+      <select name="rating">
+        <option value="1" <%= comment.rating === 1 ? 'selected' : '' %>>1</option>
+        <option value="2" <%= comment.rating === 2 ? 'selected' : '' %>>2</option>
+        <option value="3" <%= comment.rating === 3 ? 'selected' : '' %>>3</option>
+        <option value="4" <%= comment.rating === 4 ? 'selected' : '' %>>4</option>
+        <option value="5" <%= comment.rating === 5 ? 'selected' : '' %>>5</option>
       </select>
       <input type="submit" value="Edit The Sauce">
     </form>
