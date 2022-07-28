@@ -77,3 +77,33 @@ nav {
   border-radius: 50%;
   height: 45px;
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 50%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.show > body {
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: .5;
+}
