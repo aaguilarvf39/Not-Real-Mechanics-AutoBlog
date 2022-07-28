@@ -13,7 +13,7 @@ function update(req, res) {
     {'comments._id': req.params.id},
     function(err, autoblog) {
       const commentSubdoc = autoblog.comments.id(req.params.id);
-      if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/autoblogs/${autoblog._id}`);
+      if (!commentSubdoc.user.equals(req.user._id)) return res.redirect(`/autoblogs/${autoblog._id}`);
       commentSubdoc.content = req.body.content;
       autoblog.save(function(err) {
         res.redirect(`/autoblogs/${autoblog._id}`);
@@ -26,7 +26,7 @@ function update(req, res) {
     Autoblog.findOne({'comments._id': req.params.id}, function(err, autoblog) {
       let comment = autoblog.comments.id(req.params.id)
       if (err || !autoblog) return res.redirect('/autoblog');
-      res.render('autoblogs/edit', {autoblog, comment});
+      res.render('comments/edit', {autoblog, comment});
     });
   }
 
