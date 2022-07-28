@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const commentsCtrl = require('../controllers/comments');
+var isLoggedIn = require('../config/auth');
 
-router.post('/:id', commentsCtrl.create);
-router.delete('/:id', commentsCtrl.delete);
-router.get('/comments/:id/edit', commentsCtrl.edit);
-router.put('/comments/:id', commentsCtrl.update);
+router.post('/:id', isLoggedIn, commentsCtrl.create);
+router.delete('/:id',isLoggedIn, commentsCtrl.delete);
+router.get('/:id/edit', isLoggedIn, commentsCtrl.edit);
+router.put('/:aid/comments/:cid', isLoggedIn, commentsCtrl.update);
 
 module.exports = router;
