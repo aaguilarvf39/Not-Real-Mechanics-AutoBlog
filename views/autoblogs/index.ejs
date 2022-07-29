@@ -1,26 +1,28 @@
 <%- include('../partials/header') %>
 
 <h1>Daily Driven</h1>
-    <table>
+    <table id="list">
         <thead>
             <tr>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Engine</th>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Engine</th>
+              <th></th>
             </tr>
         </thead>
+        <br>
         <tbody>
             <% autoblogs.forEach(function(a) { %>
                 <tr>
-                    <td><%= a.make %></td>
-                    <td><%= a.model %></td>
-                    <td><%= a.engine %></td>
-                    <td><a href="/autoblogs/<%= a._id %>">DETAILS</a></td>
+                  <td><%= a.make %></td>
+                  <td><%= a.model %></td>
+                  <td><%= a.engine %></td>
+                  <td><a href="/autoblogs/<%= a._id %>">DETAILS</a></td>
                 </tr>
-
             <% }); %>
         </tbody>
     </table>
+    <h2 class="new">Gallery</h2>
 <div class="row">
     <div class="column">
         <img src="https://imgur.com/ru13iNG.jpg">

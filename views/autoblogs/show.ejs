@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 
-<section id="main-section">
 <br><section id="show-page">
   <div>Make: </div>
   <div><%= autoblog.make %></div>
@@ -10,7 +9,7 @@
   <div><%= autoblog.engine %></div>
 </section>
 
-<br><br><h2>Comments</h2>
+<br><br><h1 class="select">Comments</h1>
 
 <% if (user) { %>
   <form id="add-comment-form" method="POST"
