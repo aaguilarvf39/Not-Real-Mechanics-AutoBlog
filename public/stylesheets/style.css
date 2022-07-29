@@ -1,6 +1,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgb(218, 216, 220);
+  background: url()
 }
 
 body > nav {
@@ -29,13 +30,13 @@ h4 {
   font-style: oblique;
 }
 
-.versus {
+.home {
   background-image: url('https://imgur.com/xbN5SaC.jpg');
   background-size: cover;
   height:900px;
   background-position: center;
 }
-
+/*************  ***********/
 a {
   margin: 15px;
   color: black;
@@ -45,7 +46,7 @@ a {
 
 a:hover:not(.active) {
   color: white;
-  background-color: #08748a;
+  background-color: #15adcc;
 }
 
 
@@ -78,6 +79,7 @@ nav {
   height: 45px;
 }
 
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -90,7 +92,6 @@ nav {
   border-radius: 4px;
   padding: 5px;
   width: 150px;
-  
 }
 
 .column img {
@@ -102,8 +103,29 @@ nav {
   width: 150px;
 }
 
-.show > body {
+/* main::before {
+  content: "";
+  background-image: url('https://imgur.com/OaTYxJ5.jpg.jpg.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  opacity: .5;
+  position: absolute;
+  opacity: 0.25;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 0;
+} */
+
+#main-section {
+  z-index: 5;
+}
+
+#show-page {
+  margin: auto;
+  width: 30%;
+  border: 3px solid rebeccapurple;
+  padding: 10px;
 }
