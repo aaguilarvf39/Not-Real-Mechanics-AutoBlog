@@ -45,13 +45,11 @@ async function deleteComment(req, res, next) {
 
 function create(req, res) {
   Autoblog.findById(req.params.id, function(err, autoblog) {
-    console.log(req.user._id, 'create function');
     // Add the user-centric info to req.body
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
     autoblog.comments.push(req.body);
-    console.log(autoblog.comments);
     autoblog.save(function(err) {
       res.redirect(`/autoblogs/${autoblog._id}`);
     });
