@@ -9,7 +9,7 @@
 
 <a href="https://www.linkedin.com/in/jesusaguilarvf39/" target="_blank">
 <img 
-  src="https://img.shields.io/badge/-aaguilarvf39@gmail.com-blue?style=flat&logo=Linkedin&logoColor=white">
+  src="https://img.shields.io/badge/-jesusaguilarvf39-blue?style=flat&logo=Linkedin&logoColor=white">
 </a>
 
  <h1>:bookmark: Description</h1>
