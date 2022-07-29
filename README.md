@@ -5,7 +5,12 @@
 
 <h3>https://not-real-mechanics-autoblog.herokuapp.com/</h3>
 
-<h5>Jesus Aguilar</h5>
+<h4>Jesus Aguilar</h4>
+
+<h5>Trello
+https://trello.com/b/H7f8FhcM/unit-2
+</h5>
+
 
 <a href="https://www.linkedin.com/in/jesusaguilarvf39/" target="_blank">
 <img 
